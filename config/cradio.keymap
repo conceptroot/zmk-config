@@ -76,7 +76,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ Prev song│ Next song│ Vol Down │ Vol UP   │ Pause    │   │          │  7       │  8       │  9       │          │
-            &trans     &trans  &kp C_VOL_UP &kp C_VOL_DN &kp C_PP      &trans     &kp N7     &kp N8     &kp N9     &trans    
+          &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP      &trans     &kp N7     &kp N8     &kp N9     &trans    
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │  4       │  5       │  6       │  0       │
             &trans     &trans     &trans     &trans     &trans         &trans     &kp N4     &kp N5     &kp N6     &kp N0
