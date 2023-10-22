@@ -62,7 +62,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ !        │  @       │  #       │  $       │ %        │   │  ^       │  &       │  *       │  {       │  }       │
-            &kp EXCL   &kp LBKT   &kp HASH   &kp DLLR   &kp PRCNT      &kp CARET  &kp AMPS   &kp ASTRK  &kp LBKT   &kp RBKT
+            &kp EXCL   &kp LBKT   &kp HASH   &kp DLLR   &kp PRCNT      &kp CARET  &kp AMPS   &kp ASTRK  &kp LBKC   &kp RBKC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  ~       │  -       │  =       │          │   │          │  (       │  )       │  [       │  ]       │
             &trans     &kp TILDE  &kp MINUS  &kp EQUAL  &trans         &trans     &kp LPAR   &kp RPAR   &kp LBKT   &kp RBKT
