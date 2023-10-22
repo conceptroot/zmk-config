@@ -115,14 +115,14 @@
         right2_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  RESET   │
-           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &kp HOME   &kp PG_DN  &kp PG_UP  &kp END   &sys_reset
+        //│          │          │          │          │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │          │
+            &trans     &trans     &trans     &trans    &trans          &kp HOME   &kp PG_DN  &kp PG_UP  &kp END   &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │PROFILE 1 │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │          │
-          &trans       &trans     &trans     &trans    &bt BT_SEL 1    &kp LARW   &kp DARW   &kp UARW   &kp RARW  &trans
+        //│          │          │          │          │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │          │
+            &trans     &trans     &trans     &trans    &trans          &kp LARW   &kp DARW   &kp UARW   &kp RARW  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans    &bootloader
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &trans     &trans     &trans     &trans    &trans          &trans     &trans     &trans     &trans    &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
