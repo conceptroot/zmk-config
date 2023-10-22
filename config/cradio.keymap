@@ -11,8 +11,8 @@
 #define DEFAULT 0
 #define RIGHT1   1
 #define LEFT1    2
-#define TRI      3
-#define RIGHT2   4
+#define RIGHT2   3
+#define TRI      4
 
 / {
     combos {
@@ -94,24 +94,6 @@
             >;
         };
 
-        tri_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  RESET   │
-           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &kp HOME   &kp PG_DN  &kp PG_UP  &kp END   &sys_reset
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │PROFILE 1 │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │          │
-          &trans       &trans     &trans     &trans    &bt BT_SEL 1    &kp LARW   &kp DARW   &kp UARW   &kp RARW  &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans    &bootloader
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-
         right2_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -123,6 +105,23 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &trans     &trans     &trans     &trans    &trans          &trans     &trans     &trans     &trans    &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        tri_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
+           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │PROFILE 1 │   │          │          │          │          │          │
+          &trans       &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│BOOTLOADER│          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │BOOTLOADER│
+          &bootloader  &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans    &bootloader
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
