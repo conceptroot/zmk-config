@@ -75,14 +75,14 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ INSERT   │  1       │  2       │  3       │          │   │          │  7       │  8       │  9       │          │
-            &kp INS    &kp N1     &kp N2     &kp N3     &trans         &trans     &kp N7     &kp N8     &kp N9     &trans    
+        //│          │          │          │          │          │   │          │  7       │  8       │  9       │          │
+            &trans     &trans     &trans     &trans     &trans         &trans     &kp N7     &kp N8     &kp N9     &trans    
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ DELETE   │  4       │  5       │  6       │          │   │          │  4       │  5       │  6       │  0       │
-            &kp DEL    &kp N4     &kp N5     &kp N6     &trans         &trans     &kp N4     &kp N5     &kp N6     &kp N0
+        //│          │          │          │          │          │   │          │  4       │  5       │  6       │  0       │
+            &trans     &trans     &trans     &trans     &trans         &trans     &kp N4     &kp N5     &kp N6     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CAPS     │  7       │  8       │  9       │  0       │   │          │  1       │  2       │  3       │          │
-           &caps_word  &kp N7     &kp N8     &kp N9     &kp N0         &trans     &kp N1     &kp N2     &kp N3     &trans
+        //│          │          │          │          │          │   │          │  1       │  2       │  3       │          │
+            &trans     &trans     &trans     &trans     &trans         &trans     &kp N1     &kp N2     &kp N3     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -95,8 +95,8 @@
         //│ RESET    │          │          │          │PROFILE 0 │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  RESET   │
            &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &kp HOME   &kp PG_DN  &kp PG_UP  &kp END   &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &kp LARW   &kp DARW   &kp UARW   &kp RARW  &bootloader
+        //│          │          │          │          │PROFILE 1 │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │          │
+          &trans       &trans     &trans     &trans    &bt BT_SEL 1    &kp LARW   &kp DARW   &kp UARW   &kp RARW  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │BOOTLOADER│
           &bootloader  &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans    &bootloader
