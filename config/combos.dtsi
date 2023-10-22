@@ -10,6 +10,7 @@
           
 compatible = "zmk,combos";
 combo_esc { timeout-ms = <50>; key-positions = <0 1>; bindings = <&kp DOT>; };
+/*
 # Copy paste
 combo_cmd_c { timeout-ms = <50>; key-positions = <21 22 23>; bindings = <&kp LG(C)>; };
 combo_cmd_x { timeout-ms = <50>; key-positions = <21 22>; bindings = <&kp LG(X)>; };
@@ -17,4 +18,8 @@ combo_cmd_v { timeout-ms = <50>; key-positions = <20 22 23>; bindings = <&kp LG(
 # Change language
 combo_lang_en { timeout-ms = <50>; key-positions = <22 23>; bindings = <&kp LS(LC(LA(BSLH)))>; };
 combo_lang_ru { timeout-ms = <50>; key-positions = <26 27>; bindings = <&kp LS(LC(LA(MINUS)))>; };
-
+# Mac Os navigation
+# combo_ctrl_up { timeout-ms = <50>; key-positions = <1 2 3>; bindings = <&kp LS(LC(LA(BSLH)))>; };
+# combo_ctrl_left { timeout-ms = <50>; key-positions = <1 2>; bindings = <&kp LS(LC(LA(BSLH)))>; };
+# combo_ctrl_right { timeout-ms = <50>; key-positions = <2 3>; bindings = <&kp LS(LC(LA(BSLH)))>; };
+*/
