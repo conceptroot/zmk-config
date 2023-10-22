@@ -9,9 +9,10 @@
 #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LCTRL k2  &ht LALT k3  &ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RALT k2  &ht RCTRL k3  &ht RSHFT k4
 #define DEFAULT 0
-#define RIGHT   1
-#define LEFT    2
-#define TRI     3
+#define RIGHT1   1
+#define LEFT1    2
+#define TRI      3
+#define RIGHT2   4
 
 / {
     combos {
@@ -34,7 +35,7 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <RIGHT LEFT>;
+            if-layers = <RIGHT1 LEFT1>;
             then-layer = <TRI>;
         };
     };
@@ -47,18 +48,18 @@
         //│  Q       │  W       │  E       │  R       │  T       │        │  Y       │  U       │  I       │  O       │  P       │
             &kp Q      &kp W      &kp E      &kp R      &kp T               &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤        ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ; :      │
-            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SEMI)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                 &lt LEFT ESC    &mt LS(LC(LALT)) SPACE &kp BSPC &lt RIGHT ENTER
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+        //│  A       │  S       │  D       │  F       │  G       │        │  H       │  J       │  K       │  L       │ ; :      │
+            HRML(A,        S,         D,         F)     &kp G               &kp H      HRMR(J,        K,         L,        SEMI)
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤        ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  V       │  B       │        │  N       │  M       │ , <      │ . >      │ / ?      │
+            &kp Z      &kp X      &kp C      &kp V      &kp B               &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤        ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                 &lt LEFT1 ESC    &mt LS(LC(LALT)) SPACE  &lt RIGHT2 BSPC   &lt RIGHT1 ENTER
+        //                                 ╰──────────┴──────────╯        ╰──────────┴──────────╯
             >;
         };
 
-        right_layer {
+        right1_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ !        │  @       │  #       │  $       │ %        │   │  ^       │  &       │  *       │  {       │  }       │
@@ -76,7 +77,7 @@
         };
 
 
-        left_layer {
+        left1_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ Prev song│ Next song│ Vol Down │ Vol UP   │ Pause    │   │          │  7       │  8       │  9       │          │
@@ -109,5 +110,24 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
+
+
+        right2_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ RESET    │          │          │          │PROFILE 0 │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  RESET   │
+           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &kp HOME   &kp PG_DN  &kp PG_UP  &kp END   &sys_reset
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │PROFILE 1 │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │          │
+          &trans       &trans     &trans     &trans    &bt BT_SEL 1    &kp LARW   &kp DARW   &kp UARW   &kp RARW  &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│BOOTLOADER│          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │BOOTLOADER│
+          &bootloader  &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans    &bootloader
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
     };
 };
